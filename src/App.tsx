@@ -7,7 +7,7 @@ const App = () => {
     <SafeAreaView>
       <ScrollView>
         <View>
-          <Text>Hello World</Text>
+          <Text>Crono Hair App</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
