@@ -1,11 +1,8 @@
 import React from 'react';
-import { TouchableOpacityProps } from 'react-native';
 import styled from 'styled-components/native';
 import Text from '../Typography/Text';
 
-interface IButton extends TouchableOpacityProps {
-  text: string;
-}
+import { IButton } from '../../types/components';
 
 const Button: React.FC<IButton> = ({ text, onPress }) => {
   return (

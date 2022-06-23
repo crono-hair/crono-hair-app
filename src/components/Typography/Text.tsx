@@ -1,16 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-interface IText {
-  size?: number;
-  color?: string;
-  align?: string;
-  weight?: 'normal' | 'bold';
-  lineHeight?: number;
-  spacing?: number;
-  style?: object;
-  children: React.ReactChild;
-}
+import { IText } from '../../types/components';
 
 /**
  * Renders a text

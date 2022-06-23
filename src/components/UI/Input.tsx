@@ -1,13 +1,9 @@
 import React from 'react';
-import { TextInputProps } from 'react-native';
 import styled from 'styled-components/native';
 
 import Text from '../Typography/Text';
 
-interface IInput extends TextInputProps {
-  placeholder: string;
-  label?: string;
-}
+import { IInput } from '../../types/components';
 
 const Input: React.FC<IInput> = ({
   label,

@@ -2,12 +2,7 @@ import React from 'react';
 import { StatusBar, View } from 'react-native';
 import styled from 'styled-components/native';
 
-interface ISafeArea {
-  statusBarBgColor?: string;
-  barStyle?: 'light' | 'dark';
-  bgColor?: string;
-  children: React.ReactChild | React.ReactChild[];
-}
+import { ISafeArea } from '../../types/components';
 
 const SafeArea: React.FC<ISafeArea> = ({
   barStyle = 'light',

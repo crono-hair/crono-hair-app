@@ -1,23 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-interface ISpacer {
-  children?: React.ReactChild | React.ReactChild[];
-  p?: number;
-  pt?: number;
-  pr?: number;
-  pb?: number;
-  pl?: number;
-  py?: number;
-  px?: number;
-  m?: number;
-  mt?: number;
-  mr?: number;
-  mb?: number;
-  ml?: number;
-  my?: number;
-  mx?: number;
-}
+import { ISpacer } from '../../types/components';
 
 /**
  * Component for spacing (margin and padding)\
