@@ -3,6 +3,7 @@ import React from 'react';
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
+  NativeStackScreenProps,
 } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import CUSTOMER_ROUTES from './customers';
@@ -22,7 +23,7 @@ export type RootStackParamList = {
 export interface IRoute {
   name: keyof RootStackParamList;
   options: NativeStackNavigationOptions;
-  component: React.FC;
+  component: React.FC<any>;
 }
 
 export const defaultOptions: NativeStackNavigationOptions = {
