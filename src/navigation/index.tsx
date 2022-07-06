@@ -5,10 +5,8 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-
-import LoginScreen from '../screens/Login/LoginScreen';
-import CreateCustomerScreen from '../screens/Customers/CreateCustomerScreen';
-import ListCustomersScreen from '../screens/Customers/ListCustomersScreen';
+import CUSTOMER_ROUTES from './customers';
+import AUTH_ROUTES from './auth';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -21,39 +19,41 @@ export type RootStackParamList = {
   };
 };
 
-const defaultOptions: NativeStackNavigationOptions = {
-  headerShown: false,
+export interface IRoute {
+  name: keyof RootStackParamList;
+  options: NativeStackNavigationOptions;
+  component: React.FC;
+}
+
+export const defaultOptions: NativeStackNavigationOptions = {
+  headerShown: true,
+  headerShadowVisible: false,
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const { Screen, Navigator } = createNativeStackNavigator<RootStackParamList>();
 
 const Routes: React.FC = () => {
   const isAuthenticated = true;
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        {isAuthenticated ? (
-          <>
-            <Stack.Screen
-              name="CreateCustomer"
-              options={defaultOptions}
-              component={CreateCustomerScreen}
-            />
-            <Stack.Screen
-              name="ListCustomers"
-              options={defaultOptions}
-              component={ListCustomersScreen}
-            />
-          </>
-        ) : (
-          <Stack.Screen
-            name="Login"
-            options={defaultOptions}
-            component={LoginScreen}
-          />
-        )}
-      </Stack.Navigator>
+      <Navigator>
+        {isAuthenticated
+          ? [...CUSTOMER_ROUTES].map(route => (
+              <Screen
+                name={route.name}
+                options={route.options}
+                component={route.component}
+              />
+            ))
+          : [...AUTH_ROUTES].map(route => (
+              <Screen
+                name={route.name}
+                options={route.options}
+                component={route.component}
+              />
+            ))}
+      </Navigator>
     </NavigationContainer>
   );
 };
