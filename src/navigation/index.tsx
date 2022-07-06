@@ -7,8 +7,8 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 
 import LoginScreen from '../screens/Login/LoginScreen';
-import CreateCustomerScreen from '../screens/Customers/CreateCustomer';
-import ListCustomers from '../screens/Customers/ListCustomers';
+import CreateCustomerScreen from '../screens/Customers/CreateCustomerScreen';
+import ListCustomersScreen from '../screens/Customers/ListCustomersScreen';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -43,7 +43,7 @@ const Routes: React.FC = () => {
             <Stack.Screen
               name="ListCustomers"
               options={defaultOptions}
-              component={ListCustomers}
+              component={ListCustomersScreen}
             />
           </>
         ) : (
