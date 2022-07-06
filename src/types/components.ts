@@ -38,7 +38,7 @@ export interface IText {
   lineHeight?: number;
   spacing?: number;
   style?: object;
-  children: React.ReactChild;
+  children?: React.ReactChild | React.ReactChild[];
 }
 
 export interface IButton extends TouchableOpacityProps {
