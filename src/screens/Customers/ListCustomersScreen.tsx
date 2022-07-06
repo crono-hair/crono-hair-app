@@ -4,7 +4,7 @@ import { RootStackParamList } from '../../navigation';
 
 import { SafeArea, Spacer, Text } from '../../components';
 
-const ListCustomers: React.FC<
+const ListCustomersScreen: React.FC<
   NativeStackScreenProps<RootStackParamList, 'ListCustomers'>
 > = ({ route }) => {
   const { name, sex, birthdate, phone } = route.params || {};
@@ -21,4 +21,4 @@ const ListCustomers: React.FC<
   );
 };
 
-export default ListCustomers;
+export default ListCustomersScreen;
