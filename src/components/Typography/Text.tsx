@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { IText } from '../../types/components';
+import { IText } from '../../types/types';
 
 /**
  * Renders a text

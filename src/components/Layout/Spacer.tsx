@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { ISpacer } from '../../types/components';
+import { ISpacer } from '../../types/types';
 
 /**
  * Component for spacing (margin and padding)\

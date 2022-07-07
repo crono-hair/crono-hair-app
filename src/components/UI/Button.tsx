@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import Text from '../Typography/Text';
 
-import { IButton } from '../../types/components';
+import { IButton } from '../../types/types';
 
 const Button: React.FC<IButton> = ({ text, onPress }) => {
   return (

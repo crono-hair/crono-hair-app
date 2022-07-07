@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 import Text from '../Typography/Text';
 
-import { IInput } from '../../types/components';
+import { IInput } from '../../types/types';
 
 const Input: React.FC<IInput> = ({
   label,

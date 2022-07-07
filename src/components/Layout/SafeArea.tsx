@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar, View } from 'react-native';
 import styled from 'styled-components/native';
 
-import { ISafeArea } from '../../types/components';
+import { ISafeArea } from '../../types/types';
 
 const SafeArea: React.FC<ISafeArea> = ({
   barStyle = 'light',
