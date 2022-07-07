@@ -1,10 +1,10 @@
 import React from 'react';
 
+import { NavigationContainer } from '@react-navigation/native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
 
 import CUSTOMER_ROUTES from './customers';
 import AUTH_ROUTES from './auth';
@@ -12,8 +12,13 @@ import AUTH_ROUTES from './auth';
 import { RootStackParamList } from '../types/types';
 
 export const defaultOptions: NativeStackNavigationOptions = {
-  headerShown: true,
+  animation: 'fade_from_bottom',
   headerShadowVisible: false,
+  headerTintColor: '#fff',
+  headerTitleAlign: 'center',
+  headerStyle: {
+    backgroundColor: '#22223b',
+  },
 };
 
 const { Screen, Navigator } = createNativeStackNavigator<RootStackParamList>();
