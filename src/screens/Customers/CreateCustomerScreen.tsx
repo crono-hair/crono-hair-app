@@ -13,17 +13,13 @@ const CreateCustomerScreen: React.FC<INavigation> = ({ navigation }) => {
   return (
     <SafeArea>
       <Spacer p={16}>
-        <Text size={22} weight="bold" align="center">
-          Cadastrar Cliente
-        </Text>
-        <Spacer mt={16} />
         <Input
           label="Nome completo"
           onChangeText={setCustomerName}
           value={customerName}
           placeholder="Carlos Nascimento"
         />
-        <Spacer mt={8} />
+        <Spacer mt={16} />
         <Input
           label="Data de nascimento"
           onChangeText={setCustomerBirthdate}
