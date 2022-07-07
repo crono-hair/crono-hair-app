@@ -1,5 +1,6 @@
-import { IRoute } from '.';
 import LoginScreen from '../screens/Login/LoginScreen';
+
+import { IRoute } from '../types/types';
 
 const AUTH_ROUTES: IRoute[] = [
   {

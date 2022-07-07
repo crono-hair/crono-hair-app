@@ -1,6 +1,9 @@
-import { defaultOptions, IRoute } from '.';
+import { defaultOptions } from '.';
+
 import CreateCustomerScreen from '../screens/Customers/CreateCustomerScreen';
 import ListCustomersScreen from '../screens/Customers/ListCustomersScreen';
+
+import { IRoute } from '../types/types';
 
 const CUSTOMER_ROUTES: IRoute[] = [
   {
