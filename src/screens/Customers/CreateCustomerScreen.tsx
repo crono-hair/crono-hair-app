@@ -1,14 +1,10 @@
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
 
 import { Button, Input, SafeArea, Spacer, Text } from '../../components';
-import { RootStackParamList } from '../../navigation';
 
-const CreateCustomerScreen: React.FC = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+import { INavigation } from '../../types/types';
 
+const CreateCustomerScreen: React.FC<INavigation> = ({ navigation }) => {
   const [customerName, setCustomerName] = useState<string>('');
   const [customerBirthdate, setCustomerBirthdate] = useState<string>('');
   const [customerSex, setCustomerSex] = useState<string>('');

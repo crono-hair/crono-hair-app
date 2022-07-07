@@ -3,28 +3,13 @@ import React from 'react';
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
-  NativeStackScreenProps,
 } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+
 import CUSTOMER_ROUTES from './customers';
 import AUTH_ROUTES from './auth';
 
-export type RootStackParamList = {
-  Login: undefined;
-  CreateCustomer: undefined;
-  ListCustomers: {
-    name: string;
-    birthdate: string;
-    sex: string;
-    phone: string;
-  };
-};
-
-export interface IRoute {
-  name: keyof RootStackParamList;
-  options: NativeStackNavigationOptions;
-  component: React.FC<any>;
-}
+import { RootStackParamList } from '../types/types';
 
 export const defaultOptions: NativeStackNavigationOptions = {
   headerShown: true,
