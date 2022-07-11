@@ -10,6 +10,7 @@ import CUSTOMER_ROUTES from './customers';
 import AUTH_ROUTES from './auth';
 
 import { RootStackParamList } from '../types/types';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 export const defaultOptions: NativeStackNavigationOptions = {
   animation: 'fade_from_bottom',
@@ -21,30 +22,33 @@ export const defaultOptions: NativeStackNavigationOptions = {
   },
 };
 
-const { Screen, Navigator } = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
+const Drawer = createDrawerNavigator();
 
 const Routes: React.FC = () => {
   const isAuthenticated = true;
 
   return (
     <NavigationContainer>
-      <Navigator>
+      <Stack.Navigator>
         {isAuthenticated
           ? [...CUSTOMER_ROUTES].map(route => (
-              <Screen
+              <Stack.Screen
+                key={route.name}
                 name={route.name}
-                options={route.options}
+                options={{ ...defaultOptions, ...route.options }}
                 component={route.component}
               />
             ))
           : [...AUTH_ROUTES].map(route => (
-              <Screen
+              <Stack.Screen
+                key={route.name}
                 name={route.name}
-                options={route.options}
+                options={{ ...defaultOptions, ...route.options }}
                 component={route.component}
               />
             ))}
-      </Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
