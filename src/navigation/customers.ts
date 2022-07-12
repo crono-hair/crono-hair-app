@@ -6,12 +6,18 @@ import { IRoute } from '../types/types';
 const CUSTOMER_ROUTES: IRoute[] = [
   {
     name: 'CreateCustomer',
-    options: { headerTitle: 'Cadastrar cliente' },
+    options: {
+      headerTitle: 'CADASTRAR CLIENTE',
+      drawerLabel: 'CADASTRAR CLIENTE',
+    },
     component: CreateCustomerScreen,
   },
   {
     name: 'ListCustomers',
-    options: { headerTitle: 'Clientes' },
+    options: {
+      headerTitle: 'CLIENTES',
+      drawerLabel: 'CLIENTES',
+    },
     component: ListCustomersScreen,
   },
 ];

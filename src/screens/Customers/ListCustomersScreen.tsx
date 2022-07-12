@@ -1,11 +1,12 @@
 import React from 'react';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../navigation';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 
 import { SafeArea, Spacer, Text } from '../../components';
 
+import { RootStackParamList } from '../../types/types';
+
 const ListCustomersScreen: React.FC<
-  NativeStackScreenProps<RootStackParamList, 'ListCustomers'>
+  DrawerScreenProps<RootStackParamList, 'ListCustomers'>
 > = ({ route }) => {
   const { name, sex, birthdate, phone } = route.params || {};
 

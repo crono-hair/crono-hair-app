@@ -2,6 +2,10 @@ import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import {
+  createDrawerNavigator,
+  DrawerNavigationOptions,
+} from '@react-navigation/drawer';
+import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
@@ -10,45 +14,46 @@ import CUSTOMER_ROUTES from './customers';
 import AUTH_ROUTES from './auth';
 
 import { RootStackParamList } from '../types/types';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 
-export const defaultOptions: NativeStackNavigationOptions = {
-  animation: 'fade_from_bottom',
+const defaultOptions: DrawerNavigationOptions = {
   headerShadowVisible: false,
   headerTintColor: '#fff',
   headerTitleAlign: 'center',
   headerStyle: {
     backgroundColor: '#22223b',
   },
+  drawerStyle: { backgroundColor: '#22223b' },
+  drawerLabelStyle: { color: '#fff' },
+  drawerActiveBackgroundColor: '#ff9f1c',
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
-const Drawer = createDrawerNavigator();
+const { Screen: DrawerScreen, Navigator: DrawerNavigator } =
+  createDrawerNavigator<RootStackParamList>();
 
-const Routes: React.FC = () => {
+export const Routes: React.FC = () => {
   const isAuthenticated = true;
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <DrawerNavigator useLegacyImplementation>
         {isAuthenticated
           ? [...CUSTOMER_ROUTES].map(route => (
-              <Stack.Screen
+              <DrawerScreen
                 key={route.name}
                 name={route.name}
-                options={{ ...defaultOptions, ...route.options }}
+                options={{ ...route.options, ...defaultOptions }}
                 component={route.component}
               />
             ))
           : [...AUTH_ROUTES].map(route => (
-              <Stack.Screen
+              <DrawerScreen
                 key={route.name}
                 name={route.name}
-                options={{ ...defaultOptions, ...route.options }}
+                options={{ ...route.options, ...defaultOptions }}
                 component={route.component}
               />
             ))}
-      </Stack.Navigator>
+      </DrawerNavigator>
     </NavigationContainer>
   );
 };

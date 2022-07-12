@@ -1,7 +1,10 @@
+import { DrawerNavigationOptions } from '@react-navigation/drawer';
 import {
   NativeStackNavigationOptions,
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
+
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 
 import { TextInputProps, TouchableOpacityProps } from 'react-native';
 
@@ -17,12 +20,12 @@ export type RootStackParamList = {
 };
 
 export interface INavigation {
-  navigation: NativeStackNavigationProp<RootStackParamList>;
+  navigation: DrawerNavigationProp<RootStackParamList>;
 }
 
 export interface IRoute {
   name: keyof RootStackParamList;
-  options: NativeStackNavigationOptions;
+  options?: DrawerNavigationOptions;
   component: React.FC<any>;
 }
 
