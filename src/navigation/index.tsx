@@ -6,8 +6,8 @@ import {
   DrawerNavigationOptions,
 } from '@react-navigation/drawer';
 
-import CUSTOMER_ROUTES from './customers';
-import AUTH_ROUTES from './auth';
+import CUSTOMER_ROUTES from './routes/customers';
+import AUTH_ROUTES from './routes/auth';
 
 import { RootStackParamList } from '../types/types';
 
@@ -27,7 +27,7 @@ const { Screen: DrawerScreen, Navigator: DrawerNavigator } =
   createDrawerNavigator<RootStackParamList>();
 
 export const Routes: React.FC = () => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   return (
     <NavigationContainer>
