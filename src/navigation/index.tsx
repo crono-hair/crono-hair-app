@@ -5,10 +5,6 @@ import {
   createDrawerNavigator,
   DrawerNavigationOptions,
 } from '@react-navigation/drawer';
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
 
 import CUSTOMER_ROUTES from './customers';
 import AUTH_ROUTES from './auth';

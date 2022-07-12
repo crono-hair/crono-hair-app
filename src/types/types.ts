@@ -1,10 +1,7 @@
-import { DrawerNavigationOptions } from '@react-navigation/drawer';
 import {
-  NativeStackNavigationOptions,
-  NativeStackNavigationProp,
-} from '@react-navigation/native-stack';
-
-import { DrawerNavigationProp } from '@react-navigation/drawer';
+  DrawerNavigationOptions,
+  DrawerNavigationProp,
+} from '@react-navigation/drawer';
 
 import { TextInputProps, TouchableOpacityProps } from 'react-native';
 
