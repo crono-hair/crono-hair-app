@@ -10,6 +10,7 @@ const Input: React.FC<IInput> = ({
   placeholder,
   value,
   secureTextEntry,
+  maxLength,
   onChangeText,
 }) => {
   return (
@@ -20,6 +21,7 @@ const Input: React.FC<IInput> = ({
         </Text>
       ) : null}
       <StyledInput
+        maxLength={maxLength}
         secureTextEntry={secureTextEntry}
         value={value}
         placeholder={placeholder}
