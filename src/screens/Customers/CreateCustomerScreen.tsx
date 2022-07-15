@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button, Input, SafeArea, Spacer, Text } from '../../components';
+import { maskDate } from '../../utils/utils';
 
 import { INavigation } from '../../types/types';
 
@@ -22,9 +23,10 @@ const CreateCustomerScreen: React.FC<INavigation> = ({ navigation }) => {
         <Spacer mt={16} />
         <Input
           label="Data de nascimento"
-          onChangeText={setCustomerBirthdate}
+          onChangeText={text => setCustomerBirthdate(maskDate(text))}
           value={customerBirthdate}
           placeholder="01/01/1999"
+          maxLength={10}
         />
         <Spacer mt={16} />
         <Input
