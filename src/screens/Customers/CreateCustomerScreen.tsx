@@ -47,7 +47,7 @@ const CreateCustomerScreen: React.FC<INavigation> = ({ navigation }) => {
         <Button
           text="Cadastrar"
           onPress={() =>
-            navigation.navigate('ListCustomers', {
+            navigation.navigate('ListCustomersScreen', {
               name: customerName,
               birthdate: customerBirthdate,
               sex: customerSex,

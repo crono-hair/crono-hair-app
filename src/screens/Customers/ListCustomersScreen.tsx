@@ -6,7 +6,7 @@ import { SafeArea, Spacer, Text } from '../../components';
 import { RootStackParamList } from '../../types/types';
 
 const ListCustomersScreen: React.FC<
-  DrawerScreenProps<RootStackParamList, 'ListCustomers'>
+  DrawerScreenProps<RootStackParamList, 'ListCustomersScreen'>
 > = ({ route }) => {
   const { name, sex, birthdate, phone } = route.params || {};
 

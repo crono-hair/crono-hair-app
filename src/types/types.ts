@@ -6,14 +6,15 @@ import {
 import { TextInputProps, TouchableOpacityProps } from 'react-native';
 
 export type RootStackParamList = {
-  Login: undefined;
-  CreateCustomer: undefined;
-  ListCustomers: {
+  LoginScreen: undefined;
+  CreateCustomerScreen: undefined;
+  ListCustomersScreen: {
     name: string;
     birthdate: string;
     sex: string;
     phone: string;
   };
+  CalendarScreen: undefined;
 };
 
 export interface INavigation {
