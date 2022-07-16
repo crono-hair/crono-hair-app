@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Input, SafeArea, Spacer } from '../../components';
+import { Button, Input, SafeArea, Spacer, Text } from '../../components';
 import { maskDate } from '../../utils/utils';
 
 import { INavigation } from '../../types/types';
