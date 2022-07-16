@@ -7,6 +7,7 @@ import {
 } from '@react-navigation/drawer';
 
 import CUSTOMER_ROUTES from './routes/customers';
+import SCHEDULE_ROUTES from './routes/schedule';
 import AUTH_ROUTES from './routes/auth';
 
 import { RootStackParamList } from '../types/types';
@@ -27,13 +28,13 @@ const { Screen: DrawerScreen, Navigator: DrawerNavigator } =
   createDrawerNavigator<RootStackParamList>();
 
 export const Routes: React.FC = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <NavigationContainer>
       <DrawerNavigator useLegacyImplementation>
         {isAuthenticated
-          ? [...CUSTOMER_ROUTES].map(route => (
+          ? [...CUSTOMER_ROUTES, ...SCHEDULE_ROUTES].map(route => (
               <DrawerScreen
                 key={route.name}
                 name={route.name}
