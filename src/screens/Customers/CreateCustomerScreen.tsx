@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Input, SafeArea, Spacer, Text } from '../../components';
+import { Button, Input, SafeArea, Spacer } from '../../components';
 import { maskDate } from '../../utils/utils';
 
 import { INavigation } from '../../types/types';
@@ -19,6 +19,7 @@ const CreateCustomerScreen: React.FC<INavigation> = ({ navigation }) => {
           onChangeText={setCustomerName}
           value={customerName}
           placeholder="Carlos Nascimento"
+          maxLength={65}
         />
         <Spacer mt={16} />
         <Input
